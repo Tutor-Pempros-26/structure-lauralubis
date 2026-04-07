@@ -1,0 +1,4 @@
+Implemented:
+- t02_01.c: discount calculation and formatted output
+- t02_02.c: 4 sehat 5 sempurna menu levels and conclusions
+- t02_03.c: accumulator-based calculator with termination handling

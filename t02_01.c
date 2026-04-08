@@ -1,15 +1,15 @@
 // 12S25037 - Laura Lubis
 
 #include <stdio.h>
-#include <stdio.h>
+#include <string.h>
 
 struct transaksi
 {
-    int jumlahbuku;
-    double harga;
-    double total;
-    double diskon;
-    double totalharga;
+  int jumlahbuku;
+  double harga;
+  double total;
+  double diskon;
+  double totalharga;
 };
 
 int main(int _argv, char **_argc)

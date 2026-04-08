@@ -5,11 +5,11 @@
 struct InfoGizi {
     int level;
     char *kesimpulan;
-}
+};
 
 int main(int _argv, char **_argc)
 {
-  struct InfoGizi gizi;
+    struct InfoGizi gizi;
     
     scanf("%d", &gizi.level);
     
@@ -42,7 +42,6 @@ int main(int _argv, char **_argc)
     }
     
     printf("%s\n", gizi.kesimpulan);
-  
-  return 0;
- 
+
+    return 0;
 }

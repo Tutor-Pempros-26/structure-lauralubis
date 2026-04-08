@@ -5,7 +5,7 @@
 
 int main(int _argv, char **_argc)
 {
-     char op;
+    char op;
     int hasil = 0;
     int angka;
     int iterasi = 0;

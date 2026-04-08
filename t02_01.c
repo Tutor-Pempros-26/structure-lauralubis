@@ -1,6 +1,7 @@
 // 12S25037 - Laura Lubis
 
 #include <stdio.h>
+#include <stdio.h>
 
 struct transaksi
 {

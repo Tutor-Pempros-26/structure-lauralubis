@@ -9,12 +9,12 @@ struct transaksi
     double harga;
     double total;
     double diskon;
-    double totalbayar;
+    double totalharga;
 };
 
 int main(int _argv, char **_argc)
 {
-   struct transaksi t;
+  struct transaksi t;
 
   scanf("%d", &t.jumlahbuku);
   scanf("%lf", &t.harga);
@@ -41,5 +41,5 @@ if (t.diskon > 0) {
 
   printf("%.2lf\n", t.totalbayar);
 
-    return 0;
+  return 0;
 }

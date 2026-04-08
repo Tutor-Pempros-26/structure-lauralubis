@@ -7,7 +7,7 @@ struct transaksi
 {
   int jumlahbuku;
   double harga;
-  double total;
+  double totalbayar;
   double diskon;
   double totalharga;
 };

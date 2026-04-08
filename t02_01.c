@@ -2,41 +2,43 @@
 
 #include <stdio.h>
 
-typedef struct {
-    int jumlahBuku;
-    double hargaPerBuku;
+struct transaksi
+{
+    int jumlahbuku;
+    double harga;
     double total;
     double diskon;
-} Purchase;
+    double totalbayar;
+};
 
 int main(int _argv, char **_argc)
 {
-    Purchase p = {0, 0.0, 0.0, 0.0};
+   struct transaksi t;
 
-    if (scanf("%d", &p.jumlahBuku) != 1) {
-        return 0;
-    }
-    if (scanf("%lf", &p.hargaPerBuku) != 1) {
-        return 0;
-    }
+  scanf("%d", &t.jumlahbuku);
+  scanf("%lf", &t.harga);
 
-    p.total = p.jumlahBuku * p.hargaPerBuku;
+  t.totalharga= t.jumlahbuku * t.harga;
 
-    if (p.total > 500000.0) {
-        p.diskon = p.total * 0.15;
-    } else if (p.total >= 100000.0) {
-        p.diskon = p.total * 0.10;
-    } else if (p.total > 50000.0) {
-        p.diskon = p.total * 0.05;
-    }
+  if (t.totalharga > 500000) {
+    t.diskon = t.totalharga * 0.15;
+  } else if (t.totalharga > 100000){
+    t.diskon =  t.totalharga * 0.10;
+  } else if (t.totalharga > 50000) {
+    t.diskon =  t.totalharga * 0.05;
+  } else {
+    t.diskon = 0;
+  }
 
-    if (p.diskon > 0.0) {
-        printf("%.2f\n", p.diskon);
-        printf("%.2f\n", p.total - p.diskon);
-    } else {
-        printf("---\n");
-        printf("%.2f\n", p.total);
-    }
+t.totalbayar = t.totalharga - t.diskon;
+
+if (t.diskon > 0) {
+      printf("%.2lf\n", t.diskon);
+  } else {
+      printf("---\n");
+  }
+
+  printf("%.2lf\n", t.totalbayar);
 
     return 0;
 }

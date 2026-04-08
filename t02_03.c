@@ -1,57 +1,39 @@
 // 12S25037 - Laura Lubis
 
 #include <stdio.h>
-
-typedef struct {
-    char op;
-    double accumulator;
-    double initial;
-    int count;
-} Operation;
-
-static double apply_operation(Operation *state, double value)
-{
-    if (state->op == '+') {
-        state->accumulator += value;
-    } else if (state->op == '-') {
-        state->accumulator -= value;
-    } else if (state->op == '*') {
-        state->accumulator *= value;
-    }
-    return state->accumulator;
-}
+#include <stdlib.h>
 
 int main(int _argv, char **_argc)
 {
-    Operation state = {0, 0.0, 0.0, 0};
-    if (scanf(" %c", &state.op) != 1) {
-        return 0;
+     char op;
+    int hasil = 0;
+    int angka;
+    int iterasi = 0;
+
+    scanf("%c", &op);
+
+    if (op == '*') {
+        hasil = 1;
     }
 
-    if (state.op == '+' || state.op == '-') {
-        state.accumulator = 0.0;
-        state.initial = 0.0;
-    } else if (state.op == '*') {
-        state.accumulator = 1.0;
-        state.initial = 1.0;
-    } else {
-        return 0;
-    }
+    while (iterasi < 4) {
+        scanf("%d", &angka);
 
-    printf("%c\n", state.op);
-
-    double value;
-    while (state.count < 5 && scanf("%lf", &value) == 1) {
-        if (value == -1.0) {
-            printf("%.0f\n", value);
-            printf("%.0f\n", 0.0);
+        if (angka == -1) {
+            printf("0\n");
             break;
         }
 
-        double result = apply_operation(&state, value);
-        printf("%.0f\n", value);
-        printf("%.0f\n", result);
-        state.count++;
+        if (op == '+') {
+            hasil = hasil + angka;
+        } else if (op == '-') {
+            hasil = abs(hasil - angka);
+        } else if (op == '*') {
+            hasil = hasil * angka;
+        }
+
+        printf("%d\n", hasil);
+        iterasi++;
     }
 
     return 0;
